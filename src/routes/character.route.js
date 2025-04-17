@@ -10,4 +10,4 @@ router.put('/:id', updateCharacter)
 router.delete('/:id', deleteCharacter)
 
 
-modula.exports = router;
+module.exports = router;
