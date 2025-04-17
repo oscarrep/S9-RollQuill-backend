@@ -15,6 +15,5 @@ const characterSchema = mongoose.Schema(
     { timestamps: true }
 );
 
-
 const Character = mongoose.model('Character', characterSchema);
 module.exports = Character;
