@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-const User = require('./models/user.model.js')
+const Characters = require('./models/character.model.js')
 
 const app = express()
 app.use(express.json());
@@ -12,10 +12,10 @@ app.get('/', (request, response) => {
     response.send('Respone from node API');
 });
 
-app.post('/api/users', async (request, response) => {
+app.post('/api/characters', async (request, response) => {
     try {
-        const user = await User.create(request.body);
-        response.status(200).json(user);
+        const character = await Characters.create(request.body);
+        response.status(200).json(character);
     } catch (err) {
         response.status(500).json({ message: err.message });
     }
