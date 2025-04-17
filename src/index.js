@@ -8,7 +8,7 @@ const characterRoute = require('./routes/character.route.js');
 const app = express()
 app.use(express.json());
 
-app.use('/api/characters', characterRoute)
+app.use(process.env.API_CHARACTERS, characterRoute)
 
 dotenv.config();
 
