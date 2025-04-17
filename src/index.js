@@ -51,6 +51,20 @@ app.put('/api/character/:id', async (request, response) => {
     catch (error) { response.status(500).json({ message: error.message }); }
 });
 
+app.delete('/api/character/:id', async (request, response) => {
+    try {
+        const { id } = request.params
+        const character = await Character.findByIdAndDelete(id);
+
+        if (!character) return response.status(404).json({ message: "Character not found" });
+        
+        response.status(200).json({message:`Deleted character with id: ${id}`});
+
+
+    }
+    catch (error) { response.status(500).json({ message: error.message }); }
+})
+
 mongoose.connect(`${process.env.CONNECT_STR}`)
     .then(() => {
         console.log("Database connected");
