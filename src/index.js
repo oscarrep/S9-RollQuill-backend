@@ -42,7 +42,6 @@ app.put('/api/character/:id', async (request, response) => {
     try {
         const { id } = request.params
         const character = await Character.findByIdAndUpdate(id, request.body);
-        response.status(200).json(character);
 
         if (!character) return response.status(404).json({ message: "Character not found" });
 
