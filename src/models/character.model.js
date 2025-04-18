@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const characterSchema = mongoose.Schema(
     {
+        createdBy: {type: String},
         name: {type: String},
         race: {type: String},
         subrace: {type: String},
