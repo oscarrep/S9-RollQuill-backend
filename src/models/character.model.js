@@ -9,6 +9,7 @@ const characterSchema = mongoose.Schema(
         class: {type: String},
         subclass: {type: String},
         level: {type: Number},
+        speed: {type: Number},
         stats: {type: [Number]},
         skills: {type: [String]},
         expertise: {type: [String]},
