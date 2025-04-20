@@ -5,7 +5,7 @@ const characterSchema = mongoose.Schema(
         createdBy: { type: String },
         name: { type: String, required: true },
         race: { type: String, required: true },
-        subrace: { type: String, required: true },
+        subrace: { type: String},
         class: { type: String, required: true },
         subclass: { type: String, required: true },
         level: { type: Number, required: true },
