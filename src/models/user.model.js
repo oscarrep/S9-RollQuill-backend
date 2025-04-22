@@ -4,11 +4,12 @@ const userSchema = mongoose.Schema(
         username: {type: String, required: true }, 
         premium: {type: String, default: false },
         
-        races: {type: String}, 
-        subraces: {type: String}, 
-        classes: {type: String}, 
-        subclasses: {type: String}, 
-        spells: {type: Number}, 
+        characters: {type: [String]}, 
+        races: {type: [String]}, 
+        subraces: {type: [String]}, 
+        classes: {type: [String]}, 
+        subclasses: {type: [String]}, 
+        spells: {type: [String]}, 
         items: {type: [Number]}, 
         features: {type: [String]}, 
 
