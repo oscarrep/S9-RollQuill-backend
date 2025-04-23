@@ -2,17 +2,25 @@ const mongoose = require('mongoose');
 
 const characterSchema = mongoose.Schema(
     {
-        createdBy: {type: String},
-        name: {type: String},
-        race: {type: String},
-        subrace: {type: String},
-        class: {type: String},
-        subclass: {type: String},
-        level: {type: Number},
-        speed: {type: Number},
-        stats: {type: [Number]},
-        skills: {type: [String]},
-        expertise: {type: [String]},
+        createdBy: { type: String },
+        name: { type: String, required: true },
+        race: { type: String, required: true },
+        subrace: { type: String},
+        class: { type: String, required: true },
+        subclass: { type: String, required: true },
+        level: { type: Number, required: true },
+        speed: { type: Number },
+        stats: {
+            Strength: { type: Number, required: true },
+            Dexterity: { type: Number, required: true },
+            Constitution: { type: Number, required: true },
+            Intelligence: { type: Number, required: true },
+            Wisdom: { type: Number, required: true },
+            Charisma: { type: Number, required: true },
+        },
+        savingThrows: { type: [String], required: true },
+        skills: { type: [String], required: true },
+        expertise: { type: [String] },
     },
     { timestamps: true }
 );
