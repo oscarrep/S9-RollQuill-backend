@@ -15,8 +15,19 @@ const getUserByFirebaseUid = async (req, res) => {
   }
 };
 
+const getCharactersByIds = async (req, res) => {
+  try {
+    const { ids } = req.body;
+    const characters = await Character.find({ _id: { $in: ids } });
+    res.status(200).json(characters);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
 module.exports = {
   characterController,
   userController,
-  getUserByFirebaseUid
+  getUserByFirebaseUid,
+  getCharactersByIds
 };

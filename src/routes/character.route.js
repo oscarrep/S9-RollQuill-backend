@@ -1,7 +1,9 @@
 const express = require('express');
-const { characterController } = require('../controllers/main.controller');
+const { characterController, getCharactersByIds } = require('../controllers/main.controller');
 
 const router = express.Router();
+
+router.post('/batch', getCharactersByIds);
 
 router.get('/', characterController.getAll);
 router.get('/:id', characterController.getOne);
