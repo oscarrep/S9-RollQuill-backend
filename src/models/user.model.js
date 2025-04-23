@@ -1,19 +1,22 @@
-const userSchema = mongoose.Schema( 
+const mongoose = require('mongoose');
+
+const userSchema = mongoose.Schema(
     {
         fireUid: { type: String, required: true, unique: true },
-        username: {type: String, required: true }, 
-        premium: {type: String, default: false },
+        premium: { type: String, default: false },
+        email: { type: String, required: true, unique: true },
         
-        races: {type: String}, 
-        subraces: {type: String}, 
-        classes: {type: String}, 
-        subclasses: {type: String}, 
-        spells: {type: Number}, 
-        items: {type: [Number]}, 
-        features: {type: [String]}, 
+        characters: { type: [String] },
+        races: { type: [String] },
+        subraces: { type: [String] },
+        classes: { type: [String] },
+        subclasses: { type: [String] },
+        spells: { type: [String] },
+        items: { type: [String] },
+        features: { type: [String] },
 
     },
-{ timestamps: true }
+    { timestamps: true }
 );
 
 const User = mongoose.model('User', userSchema);
