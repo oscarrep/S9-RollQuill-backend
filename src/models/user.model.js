@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const userSchema = mongoose.Schema(
     {
         fireUid: { type: String, required: true, unique: true },
-        username: { type: String, required: true },
         premium: { type: String, default: false },
 
         characters: { type: [String] },
