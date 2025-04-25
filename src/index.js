@@ -13,7 +13,7 @@ const app = express()
 app.use(cors({
     origin: (origin, callback) => {
         const allowedOrigins = [
-            //'https://s9-rollquill.vercel.app',
+            'https://s9-rollquill.vercel.app',
             'http://localhost:4200'
         ];
         if (!origin || allowedOrigins.includes(origin)) {
