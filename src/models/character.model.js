@@ -11,12 +11,30 @@ const characterSchema = mongoose.Schema(
         level: { type: Number, required: true },
         speed: { type: Number },
         ability_scores: {
-            STR: [{ name: 'Strength' }, { type: Number, required: true }],
-            DEX: [{ name: 'Dexterity' }, { type: Number, required: true }],
-            CON: [{ name: 'Constitution' }, { type: Number, required: true }],
-            INT: [{ name: 'Intelligence' }, { type: Number, required: true }],
-            WIS: [{ name: 'Strength' }, { type: Number, required: true }],
-            CHA: [{ name: 'Strength' }, { type: Number, required: true }],
+            STR: [
+                { name: { type: String } },
+                { value: { type: Number, required: true } }
+            ],
+            DEX: [
+                { name: { type: String } },
+                { value: { type: Number, required: true } }
+            ],
+            CON: [
+                { name: { type: String } },
+                { value: { type: Number, required: true } }
+            ],
+            INT: [
+                { name: { type: String } },
+                { value: { type: Number, required: true } }
+            ],
+            WIS: [
+                { name: { type: String } },
+                { value: { type: Number, required: true } }
+            ],
+            CHA: [
+                { name: { type: String } },
+                { value: { type: Number, required: true } }
+            ],
         },
         savingThrows: { type: [String], required: true },
         classSkills: { type: [String], required: true },
