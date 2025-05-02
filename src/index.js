@@ -9,35 +9,35 @@ const userRoute = require('./routes/user.route.js');
 
 dotenv.config();
 const app = express()
-
-const allowedOrigins = [
-    'https://s9-rollquill.vercel.app',
-    'http://localhost:4200'
-];
-
-app.use((req, res, next) => {
-    const origin = req.headers.origin;
-    if (!origin || allowedOrigins.includes(origin)) {
-        next();
-    } else {
-        return res.status(403).json({ message: `CORS Rejected: ${origin}` });
-    }
-});
-
-app.use(cors({
-    origin: (origin, callback) => {
-        const allowedOrigins = [
-            'https://s9-rollquill.vercel.app',
-            'http://localhost:4200'
-        ];
-        if (!origin || allowedOrigins.includes(origin)) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
-    credentials: true
-}));
+ 
+ const allowedOrigins = [
+     'https://s9-rollquill.vercel.app',
+     'http://localhost:4200'
+ ];
+ 
+ app.use((req, res, next) => {
+     const origin = req.headers.origin;
+     if (!origin || allowedOrigins.includes(origin)) {
+         next();
+     } else {
+         return res.status(403).json({ message: `CORS Rejected: ${origin}` });
+     }
+ });
+ 
+ app.use(cors({
+     origin: (origin, callback) => {
+         const allowedOrigins = [
+             'https://s9-rollquill.vercel.app',
+             'http://localhost:4200'
+         ];
+         if (!origin || allowedOrigins.includes(origin)) {
+             callback(null, true);
+         } else {
+             callback(new Error('Not allowed by CORS'));
+         }
+     },
+     credentials: true
+ }));
 
 app.use(express.json());
 
