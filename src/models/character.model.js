@@ -11,31 +11,20 @@ const characterSchema = mongoose.Schema(
         level: { type: Number, required: true },
         speed: { type: Number },
         ability_scores: {
-            STR: [
-                { name: { type: String } },
-                { value: { type: Number, required: true } }
-            ],
-            DEX: [
-                { name: { type: String } },
-                { value: { type: Number, required: true } }
-            ],
-            CON: [
-                { name: { type: String } },
-                { value: { type: Number, required: true } }
-            ],
-            INT: [
-                { name: { type: String } },
-                { value: { type: Number, required: true } }
-            ],
-            WIS: [
-                { name: { type: String } },
-                { value: { type: Number, required: true } }
-            ],
-            CHA: [
-                { name: { type: String } },
-                { value: { type: Number, required: true } }
-            ],
+            STR: [{ name: { type: String }, value: { type: Number, required: true } }],
+            DEX: [{ name: { type: String }, value: { type: Number, required: true } }],
+            CON: [{ name: { type: String }, value: { type: Number, required: true } }],
+            INT: [{ name: { type: String }, value: { type: Number, required: true } }],
+            WIS: [{ name: { type: String }, value: { type: Number, required: true } }],
+            CHA: [{ name: { type: String }, value: { type: Number, required: true } }],
         },
+        ability_bonuses: [
+            {
+                name: { type: String, required: true },
+                value: { type: Number, required: true },
+            }
+        ],
+
         savingThrows: { type: [String], required: true },
         classSkills: { type: [String], required: true },
         backgroundSkills: { type: [String], required: true },
