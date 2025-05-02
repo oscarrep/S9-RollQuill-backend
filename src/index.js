@@ -25,17 +25,7 @@ app.use((req, res, next) => {
 });
 
 app.use(cors({
-    origin: (origin, callback) => {
-        const allowedOrigins = [
-            'https://s9-rollquill.vercel.app',
-            'http://localhost:4200'
-        ];
-        if (!origin || allowedOrigins.includes(origin)) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
+    origin: allowedOrigins,
     credentials: true
 }));
 

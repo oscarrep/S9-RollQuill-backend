@@ -5,7 +5,7 @@ const userSchema = mongoose.Schema(
         fireUid: { type: String, required: true, unique: true },
         premium: { type: String, default: false },
         email: { type: String, required: true, unique: true },
-        password: { type: String },
+        
         characters: { type: [String] },
         races: { type: [String] },
         subraces: { type: [String] },
