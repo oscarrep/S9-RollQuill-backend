@@ -11,7 +11,7 @@ dotenv.config();
 const app = express()
  
 const allowedOrigins = [
-    'https://s9-rollquill.vercel.app',
+    'https://s9-roll-quill.vercel.app',
     'http://localhost:4200'
   ];
   
